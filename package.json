@@ -9,10 +9,11 @@
     "install": "npm-run-all --parallel install-server install-client",
     "server": "npm run watch --prefix server",
     "client": "npm start --prefix client",
+    "watch": "npm-run-all --parallel server client",
     "start": "npm-run-all --parallel server client",
     "preinstalla": "npm run build --prefix client",
     "preinstallb": "npm start --prefix server",
-    "deploy": "npm-run-all --parallel preinstalla preinstallb",
+    "deploy": "npm-run-all --sequential preinstalla preinstallb",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
